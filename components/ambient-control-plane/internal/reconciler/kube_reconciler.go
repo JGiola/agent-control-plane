@@ -50,6 +50,9 @@ const (
 
 	annotationCredentialSourceNamespace = "ambient.ai/credential-source-namespace"
 	annotationCredentialSourceName      = "ambient.ai/credential-source-name"
+
+	// ACP currently uses a single "default" workspace on OpenShell gateways.
+	gatewayWorkspace = "default"
 )
 
 type credentialSidecarSpec struct {
@@ -528,6 +531,7 @@ func (r *SimpleKubeReconciler) provisionSessionSandbox(ctx context.Context, sess
 			Providers:   providerNames,
 			Policy:      sandboxPolicy,
 		},
+		Workspace: gatewayWorkspace,
 	}
 
 	if _, err := r.gateway.CreateSandbox(ctx, namespace, req); err != nil {
@@ -1173,6 +1177,7 @@ func (r *SimpleKubeReconciler) ensureVertexCredentialRefresh(ctx context.Context
 				"private_key":  material.PrivateKey,
 			},
 			SecretMaterialKeys: []string{"private_key"},
+			Workspace:          gatewayWorkspace,
 		}
 		r.logger.Info().
 			Str("provider", provName).
@@ -1199,6 +1204,7 @@ func (r *SimpleKubeReconciler) ensureVertexCredentialRefresh(ctx context.Context
 				"private_key":   "not-used-for-oauth2",
 			},
 			SecretMaterialKeys: []string{"client_secret", "refresh_token", "private_key"},
+			Workspace:          gatewayWorkspace,
 		}
 		r.logger.Info().
 			Str("provider", provName).
@@ -1215,6 +1221,7 @@ func (r *SimpleKubeReconciler) ensureVertexCredentialRefresh(ctx context.Context
 	rotateResp, err := r.gateway.RotateProviderCredential(ctx, namespace, &openshellpb.RotateProviderCredentialRequest{
 		Provider:      provName,
 		CredentialKey: credKey,
+		Workspace:     gatewayWorkspace,
 	})
 	if err != nil {
 		r.logger.Warn().Err(err).
@@ -1604,6 +1611,7 @@ func (r *SimpleKubeReconciler) configureInferenceFromProviders(ctx context.Conte
 			ProviderName: osName,
 			ModelId:      inferenceModel,
 			NoVerify:     true,
+			Workspace:    gatewayWorkspace,
 		})
 		if err != nil {
 			if status.Code(err) == codes.Unimplemented {
