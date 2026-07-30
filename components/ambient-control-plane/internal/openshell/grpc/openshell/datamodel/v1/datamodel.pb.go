@@ -12,7 +12,7 @@
 package datamodel_v1
 
 import (
-	_ "github.com/ambient-code/platform/components/ambient-control-plane/internal/openshell/grpc/openshell/options/v1"
+	_ "github.com/openshift-online/agent-control-plane/components/ambient-control-plane/internal/openshell/grpc/openshell/options/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -438,7 +438,7 @@ const file_openshell_datamodel_v1_datamodel_proto_rawDesc = "" +
 	"\x0eWorkspacePhase\x12\x1f\n" +
 	"\x1bWORKSPACE_PHASE_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\x16WORKSPACE_PHASE_ACTIVE\x10\x01\x12\x1f\n" +
-	"\x1bWORKSPACE_PHASE_TERMINATING\x10\x02B\x7fZ}github.com/ambient-code/platform/components/ambient-control-plane/internal/openshell/grpc/openshell/datamodel/v1;datamodel_v1b\x06proto3"
+	"\x1bWORKSPACE_PHASE_TERMINATING\x10\x02B\x8f\x01Z\x8c\x01github.com/openshift-online/agent-control-plane/components/ambient-control-plane/internal/openshell/grpc/openshell/datamodel/v1;datamodel_v1b\x06proto3"
 
 var (
 	file_openshell_datamodel_v1_datamodel_proto_rawDescOnce sync.Once

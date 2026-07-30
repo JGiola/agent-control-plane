@@ -13,9 +13,9 @@
 package openshell_v1
 
 import (
-	v1 "github.com/ambient-code/platform/components/ambient-control-plane/internal/openshell/grpc/openshell/datamodel/v1"
-	_ "github.com/ambient-code/platform/components/ambient-control-plane/internal/openshell/grpc/openshell/options/v1"
-	v11 "github.com/ambient-code/platform/components/ambient-control-plane/internal/openshell/grpc/openshell/sandbox/v1"
+	v1 "github.com/openshift-online/agent-control-plane/components/ambient-control-plane/internal/openshell/grpc/openshell/datamodel/v1"
+	_ "github.com/openshift-online/agent-control-plane/components/ambient-control-plane/internal/openshell/grpc/openshell/options/v1"
+	v11 "github.com/openshift-online/agent-control-plane/components/ambient-control-plane/internal/openshell/grpc/openshell/sandbox/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	structpb "google.golang.org/protobuf/types/known/structpb"
@@ -13666,7 +13666,7 @@ const file_openshell_v1_openshell_proto_rawDesc = "" +
 	"\x0fDeleteWorkspace\x12$.openshell.v1.DeleteWorkspaceRequest\x1a%.openshell.v1.DeleteWorkspaceResponse\x12g\n" +
 	"\x12AddWorkspaceMember\x12'.openshell.v1.AddWorkspaceMemberRequest\x1a(.openshell.v1.AddWorkspaceMemberResponse\x12p\n" +
 	"\x15RemoveWorkspaceMember\x12*.openshell.v1.RemoveWorkspaceMemberRequest\x1a+.openshell.v1.RemoveWorkspaceMemberResponse\x12m\n" +
-	"\x14ListWorkspaceMembers\x12).openshell.v1.ListWorkspaceMembersRequest\x1a*.openshell.v1.ListWorkspaceMembersResponseBuZsgithub.com/ambient-code/platform/components/ambient-control-plane/internal/openshell/grpc/openshell/v1;openshell_v1b\x06proto3"
+	"\x14ListWorkspaceMembers\x12).openshell.v1.ListWorkspaceMembersRequest\x1a*.openshell.v1.ListWorkspaceMembersResponseB\x85\x01Z\x82\x01github.com/openshift-online/agent-control-plane/components/ambient-control-plane/internal/openshell/grpc/openshell/v1;openshell_v1b\x06proto3"
 
 var (
 	file_openshell_v1_openshell_proto_rawDescOnce sync.Once
